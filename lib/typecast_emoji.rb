@@ -14,14 +14,17 @@ end
 ActiveSupport.on_load(:action_view) do
   ActionView::Base.class_eval do
     def e(str)
-      return str if request.try(:mobile?)
-      Jpmobile::Emoticon.utf8_to_unicodecr(str).gsub(/&#x[0-9A-Fa-f]{4};/) do |code|
-        if filename = ::Jpmobile::Emoticon::UNICODE_TO_IMAGE[code[3,4].upcase]
-          "<img src=\"/emoji/#{filename}.gif\" alt=\"#{filename}\" />".html_safe
+      html_escape(Jpmobile::Emoticon.utf8_to_unicodecr(str)).gsub(/&amp;#x[0-9A-Fa-f]{4};/) do |code|
+        if filename = ::Jpmobile::Emoticon::UNICODE_TO_IMAGE[code[7,4].upcase]
+          if !request.try(:mobile?)
+            "<img src=\"/emoji/#{filename}.gif\" alt=\"#{filename}\" />".html_safe
+          else
+            code.gsub(/&amp;/, '&')
+          end
         else
           code
         end
-      end
+      end.html_safe
     end
   end
 end
