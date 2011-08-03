@@ -1,6 +1,14 @@
 = typecast_emoji
 
-Description goes here.
+Six Apart様が公開されているTypePad絵文字アイコン画像を利用し、JpmobileでのPC用ブラウザ向け絵文字表示を支援します。
+また、RailsAdminに絵文字パレット付き入力フォームを追加します（RailsAdminを利用している場合のみ）。
+
+絵文字変換テーブルにTypeCastのUnicode-ファイル名対応表データを利用しておりますので、本プラグインはGPL-v2でのリリースとなります。
+
+== 使い方
+
+  rake typecast_emoji:install
+でアプリケーションのpublic/emoji/に絵文字アイコン画像をコピーします。
 
 == Contributing to typecast_emoji
  
@@ -17,3 +25,9 @@ Description goes here.
 Copyright (c) 2011 Mitsuhiro Shibuya. See LICENSE.txt for
 further details.
 
+TypePad 絵文字アイコン画像 by Six Apart Ltd is licensed under a Creative Commons 表示 2.1 日本 License.
+Permissions beyond the scope of this license may be available at http://start.typepad.jp/typecast/.
+
+This project was built partly based on works of
+TypeCast(http://code.google.com/p/typecastmobile/)
+which is released under GPL-v2 license.
