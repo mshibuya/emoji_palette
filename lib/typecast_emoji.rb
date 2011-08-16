@@ -16,10 +16,14 @@ Jpmobile::Emoticon.const_set("UNICODE_TO_IMAGE",
 ActiveSupport.on_load(:action_view) do
   ActionView::Base.class_eval do
     def emoji(str)
+      return ''.html_safe unless str
       html_escape(Jpmobile::Emoticon.utf8_to_unicodecr(str)).gsub(/&amp;#x[0-9A-Fa-f]{4};/) do |code|
         if filename = ::Jpmobile::Emoticon::UNICODE_TO_IMAGE[code[7,4].upcase]
           if !request.try(:mobile?)
-            "<img src=\"/emoji/#{filename}.gif\" alt=\"#{filename}\" />".html_safe
+            if self.respond_to? :head_style
+              head_style "emoji"
+            end
+            "<span class=\"emoji #{filename}\"></span>".html_safe
           else
             code.gsub(/&amp;/, '&')
           end

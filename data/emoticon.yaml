@@ -44,7 +44,7 @@
   E667: bank
   E668: atm
   E669: hotel
-  E66A: 24hours
+  E66A: hours24
   E66B: gasstation
   E66C: parking
   E66D: signaler
@@ -111,7 +111,7 @@
   E6B2: chair
   E6B3: night
   E6B7: soon
-  E6B8: on
+  E6B8: 'on'
   E6B9: end
   E6BA: clock
   E6CE: phoneto
@@ -294,7 +294,7 @@
   E4A0: clip
   E4A1: pencil
   E4A3: atm
-  E4A4: 24hours
+  E4A4: hours24
   E4A5: toilet
   E4A6: parking
   E4AA: bank
@@ -569,7 +569,7 @@
   F153: postoffice
   F154: atm
   F155: hospital
-  F156: 24hours
+  F156: hours24
   F157: school
   F158: hotel
   F159: bus

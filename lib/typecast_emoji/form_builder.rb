@@ -8,7 +8,9 @@ module TypecastEmoji # :nodoc:
     def emoji_text_area(method, options = {})
       options = options.symbolize_keys
 
-      text_area method,options
+      palette = @template.render(:partial =>'layouts/typecast_emoji/emoji_pallete',
+                       :locals => {:target => @object_name + '_' + method.to_s})
+      palette + text_area(method,options)
     end
   end
 end
