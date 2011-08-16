@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mitsuhiro Shibuya"]
-  s.date = %q{2011-08-03}
+  s.date = %q{2011-08-16}
   s.description = %q{PC emoji translation support for jpmobile using TypePad emoji icons}
   s.email = %q{mit.shibuya@gmail.com}
   s.extra_rdoc_files = [
@@ -25,11 +25,13 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "app/views/layouts/typecast_emoji/_emoji_pallete.html.erb",
     "data/emoticon.yaml",
     "lib/tasks/typecast_emoji.rake",
     "lib/typecast_emoji.rb",
     "lib/typecast_emoji/engine.rb",
-    "public/emoji/24hours.gif",
+    "lib/typecast_emoji/form_builder.rb",
+    "lib/typecast_emoji/rails_admin/emoji_text.rb",
     "public/emoji/airplane.gif",
     "public/emoji/angry.gif",
     "public/emoji/annoy.gif",
@@ -106,6 +108,7 @@ Gem::Specification.new do |s|
     "public/emoji/drama.gif",
     "public/emoji/ear.gif",
     "public/emoji/eight.gif",
+    "public/emoji/emoji_icon.gif",
     "public/emoji/emoticons.gif",
     "public/emoji/empty.gif",
     "public/emoji/end.gif",
@@ -143,6 +146,7 @@ Gem::Specification.new do |s|
     "public/emoji/horse.gif",
     "public/emoji/hospital.gif",
     "public/emoji/hotel.gif",
+    "public/emoji/hours24.gif",
     "public/emoji/house.gif",
     "public/emoji/id.gif",
     "public/emoji/impact.gif",
@@ -282,6 +286,8 @@ Gem::Specification.new do |s|
     "public/emoji/yacht.gif",
     "public/emoji/yen.gif",
     "public/emoji/zero.gif",
+    "public/javascripts/typecast_emoji.js",
+    "public/stylesheets/emoji.css",
     "spec/spec_helper.rb",
     "spec/typecast_emoji_spec.rb",
     "typecast_emoji.gemspec"

@@ -7,8 +7,27 @@ Six Apart様が公開されているTypePad絵文字アイコン画像を利用�
 
 == 使い方
 
+=== 初期設定
   rake typecast_emoji:install
-でアプリケーションのpublic/emoji/に絵文字アイコン画像をコピーします。
+でアプリケーションのpublic/に必要なファイルをコピーします。
+
+=== 絵文字の表示
+  <%= emoji '今日の天気は&#xE63E;' %>
+  <%= e '今日の天気は&#xE63E;' %>
+
+=== 絵文字入力パレット
+  <div class="field">
+    <%= f.label :text_with_emoji %><br />
+    <%= f.emoji_text_area :text_with_emoji %>
+  </div>
+
+=== RailsAdminとの連携
+  class SampleModel < ActiveRecord::Base
+    rails_admin do
+      field :name
+      field :text_with_emoji, :emoji_text
+    end
+  end
 
 == Contributing to typecast_emoji
  
