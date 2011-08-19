@@ -20,10 +20,7 @@ ActiveSupport.on_load(:action_view) do
       html_escape(Jpmobile::Emoticon.utf8_to_unicodecr(str)).gsub(/&amp;#x[0-9A-Fa-f]{4};/) do |code|
         if filename = ::Jpmobile::Emoticon::UNICODE_TO_IMAGE[code[7,4].upcase]
           if !request.try(:mobile?)
-            if self.respond_to? :head_style
-              head_style "emoji"
-            end
-            "<span class=\"emoji #{filename}\"></span>".html_safe
+            "<img src=\"/emoji/#{filename}.gif\" alt=\"#{filename}\" />".html_safe
           else
             code.gsub(/&amp;/, '&')
           end
