@@ -4,7 +4,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{typecast_emoji}
+  s.name = %q{emoji_palette}
   s.version = "0.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
@@ -25,13 +25,13 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "app/views/layouts/typecast_emoji/_emoji_pallete.html.erb",
+    "app/views/layouts/emoji_palette/_emoji_pallete.html.erb",
     "data/emoticon.yaml",
-    "lib/tasks/typecast_emoji.rake",
-    "lib/typecast_emoji.rb",
-    "lib/typecast_emoji/engine.rb",
-    "lib/typecast_emoji/form_builder.rb",
-    "lib/typecast_emoji/rails_admin/emoji_text.rb",
+    "lib/tasks/emoji_palette.rake",
+    "lib/emoji_palette.rb",
+    "lib/emoji_palette/engine.rb",
+    "lib/emoji_palette/form_builder.rb",
+    "lib/emoji_palette/rails_admin/emoji_text.rb",
     "public/emoji/airplane.gif",
     "public/emoji/angry.gif",
     "public/emoji/annoy.gif",
@@ -286,13 +286,13 @@ Gem::Specification.new do |s|
     "public/emoji/yacht.gif",
     "public/emoji/yen.gif",
     "public/emoji/zero.gif",
-    "public/javascripts/typecast_emoji.js",
+    "public/javascripts/emoji_palette.js",
     "public/stylesheets/emoji.css",
     "spec/spec_helper.rb",
-    "spec/typecast_emoji_spec.rb",
-    "typecast_emoji.gemspec"
+    "spec/emoji_palette_spec.rb",
+    "emoji_palette.gemspec"
   ]
-  s.homepage = %q{http://github.com/mshibuya/typecast_emoji}
+  s.homepage = %q{http://github.com/mshibuya/emoji_palette}
   s.licenses = ["GPL"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}

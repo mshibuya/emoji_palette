@@ -1,4 +1,4 @@
-= typecast_emoji
+= emoji_palette
 
 Six Apart様が公開されているTypePad絵文字アイコン画像を利用し、JpmobileでのPC用ブラウザ向け絵文字表示を支援します。
 また、RailsAdminに絵文字パレット付き入力フォームを追加します（RailsAdminを利用している場合のみ）。
@@ -8,7 +8,7 @@ Six Apart様が公開されているTypePad絵文字アイコン画像を利用�
 == 使い方
 
 === 初期設定
-  rake typecast_emoji:install
+  rake emoji_palette:install
 でアプリケーションのpublic/に必要なファイルをコピーします。
 
 === 絵文字の表示
@@ -29,7 +29,7 @@ Six Apart様が公開されているTypePad絵文字アイコン画像を利用�
     end
   end
 
-== Contributing to typecast_emoji
+== Contributing to emoji_palette
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it

@@ -1,6 +1,6 @@
 require 'rails_admin/config/fields/base'
 
-module TypecastEmoji
+module EmojiPalette
   module RailsAdmin
     class EmojiText < ::RailsAdmin::Config::Fields::Base
       @view_helper = :emoji_text_area

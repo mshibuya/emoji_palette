@@ -14,8 +14,8 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "typecast_emoji"
-  gem.homepage = "http://github.com/mshibuya/typecast_emoji"
+  gem.name = "emoji_palette"
+  gem.homepage = "http://github.com/mshibuya/emoji_palette"
   gem.license = "GPL"
   gem.summary = %Q{PC emoji translation support for jpmobile using TypePad emoji icons}
   gem.description = %Q{PC emoji translation support for jpmobile using TypePad emoji icons}
@@ -43,7 +43,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "typecast_emoji #{version}"
+  rdoc.title = "emoji_palette #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

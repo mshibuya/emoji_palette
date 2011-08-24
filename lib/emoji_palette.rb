@@ -1,11 +1,11 @@
 # coding: utf-8
 
-module TypecastEmoji
-  require 'typecast_emoji/engine' if defined?(Rails)
+module EmojiPalette
+  require 'emoji_palette/engine' if defined?(Rails)
   
-  autoload :FormBuilder, 'typecast_emoji/form_builder'
+  autoload :FormBuilder, 'emoji_palette/form_builder'
   module RailsAdmin
-    autoload :EmojiText, 'typecast_emoji/rails_admin/emoji_text'
+    autoload :EmojiText, 'emoji_palette/rails_admin/emoji_text'
   end
 end
 
@@ -32,10 +32,10 @@ ActiveSupport.on_load(:action_view) do
     alias_method :e, :emoji
   end
 
-  ActionView::Helpers::FormBuilder.send(:include, TypecastEmoji::FormBuilder)
+  ActionView::Helpers::FormBuilder.send(:include, EmojiPalette::FormBuilder)
 
 end
 
 if defined?(::RailsAdmin)
-  ::RailsAdmin::Config::Fields::Types.register(:emoji_text, ::TypecastEmoji::RailsAdmin::EmojiText)
+  ::RailsAdmin::Config::Fields::Types.register(:emoji_text, ::EmojiPalette::RailsAdmin::EmojiText)
 end

@@ -1,4 +1,4 @@
-namespace :typecast_emoji do
+namespace :emoji_palette do
   desc "Copy assets files"
   task :install do
     %w(emoji javascripts stylesheets).map do |dir|
