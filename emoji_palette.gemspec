@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mitsuhiro Shibuya"]
-  s.date = %q{2011-08-16}
+  s.date = %q{2011-08-24}
   s.description = %q{PC emoji translation support for jpmobile using TypePad emoji icons}
   s.email = %q{mit.shibuya@gmail.com}
   s.extra_rdoc_files = [
@@ -27,11 +27,12 @@ Gem::Specification.new do |s|
     "VERSION",
     "app/views/layouts/emoji_palette/_emoji_pallete.html.erb",
     "data/emoticon.yaml",
-    "lib/tasks/emoji_palette.rake",
+    "emoji_palette.gemspec",
     "lib/emoji_palette.rb",
     "lib/emoji_palette/engine.rb",
     "lib/emoji_palette/form_builder.rb",
     "lib/emoji_palette/rails_admin/emoji_text.rb",
+    "lib/tasks/emoji_palette.rake",
     "public/emoji/airplane.gif",
     "public/emoji/angry.gif",
     "public/emoji/annoy.gif",
@@ -288,9 +289,8 @@ Gem::Specification.new do |s|
     "public/emoji/zero.gif",
     "public/javascripts/emoji_palette.js",
     "public/stylesheets/emoji.css",
-    "spec/spec_helper.rb",
     "spec/emoji_palette_spec.rb",
-    "emoji_palette.gemspec"
+    "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/mshibuya/emoji_palette}
   s.licenses = ["GPL"]
