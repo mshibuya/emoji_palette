@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{emoji_palette}
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mitsuhiro Shibuya"]
-  s.date = %q{2011-08-24}
+  s.date = %q{2011-09-09}
   s.description = %q{PC emoji translation support for jpmobile using TypePad emoji icons}
   s.email = %q{mit.shibuya@gmail.com}
   s.extra_rdoc_files = [
@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
     "lib/emoji_palette.rb",
     "lib/emoji_palette/engine.rb",
     "lib/emoji_palette/form_builder.rb",
+    "lib/emoji_palette/helper.rb",
     "lib/emoji_palette/rails_admin/emoji_text.rb",
     "lib/tasks/emoji_palette.rake",
     "public/emoji/airplane.gif",
@@ -289,8 +290,11 @@ Gem::Specification.new do |s|
     "public/emoji/zero.gif",
     "public/javascripts/emoji_palette.js",
     "public/stylesheets/emoji.css",
+    "spec/emoji_palette/form_builder_spec.rb",
+    "spec/emoji_palette/helper_spec.rb",
     "spec/emoji_palette_spec.rb",
-    "spec/spec_helper.rb"
+    "spec/spec_helper.rb",
+    "spec/support/models.rb"
   ]
   s.homepage = %q{http://github.com/mshibuya/emoji_palette}
   s.licenses = ["GPL"]
@@ -303,7 +307,9 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<jpmobile>, [">= 1.0.0"])
-      s.add_development_dependency(%q<activesupport>, [">= 3.0.0"])
+      s.add_runtime_dependency(%q<activesupport>, [">= 3.0.0"])
+      s.add_runtime_dependency(%q<actionpack>, [">= 3.0.0"])
+      s.add_development_dependency(%q<activerecord>, [">= 3.0.0"])
       s.add_development_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
@@ -313,6 +319,8 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<jpmobile>, [">= 1.0.0"])
       s.add_dependency(%q<activesupport>, [">= 3.0.0"])
+      s.add_dependency(%q<actionpack>, [">= 3.0.0"])
+      s.add_dependency(%q<activerecord>, [">= 3.0.0"])
       s.add_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
@@ -323,6 +331,8 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<jpmobile>, [">= 1.0.0"])
     s.add_dependency(%q<activesupport>, [">= 3.0.0"])
+    s.add_dependency(%q<actionpack>, [">= 3.0.0"])
+    s.add_dependency(%q<activerecord>, [">= 3.0.0"])
     s.add_dependency(%q<rspec>, ["~> 2.3.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])

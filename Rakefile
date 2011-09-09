@@ -2,6 +2,7 @@
 
 require 'rubygems'
 require 'bundler'
+require 'cover_me'
 begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
@@ -39,7 +40,7 @@ end
 task :default => :spec
 
 require 'rdoc/task'
-Rake::RDocTask.new do |rdoc|
+RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
@@ -47,3 +48,23 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+CoverMe.config do |c|
+  c.at_exit = Proc.new {}
+  c.file_pattern = /#{c.project.root}\/lib\/.+\.rb/ix
+end
+
+namespace :cover_me do
+  task :report do
+    CoverMe.complete!
+  end
+end
+
+task :test do
+  Rake::Task['cover_me:report'].invoke
+end
+
+task :spec do
+  Rake::Task['cover_me:report'].invoke
+end
+
