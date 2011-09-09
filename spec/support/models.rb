@@ -19,6 +19,10 @@ class Tableless < ActiveRecord::Base
     @column_defaults ||= columns.map { |column| [column.name, nil] }.inject({}) { |m, e| m[e[0]] = e[1]; m }
   end
 
+  def self.primary_key
+    :id
+  end
+
   # Override the save method to prevent exceptions.
   def save(validate = true)
     validate ? valid? : true
