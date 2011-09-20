@@ -20,12 +20,6 @@ describe EmojiPalette::FormBuilder, :type => :helper do
     @h.form_for(@article, :url => '') do |f|
       f.emoji_text_area(:title).should == (<<EOT
 <a id="emoji_button_article_title" class="emoji_button" href="#"></a>
-<script type="text/javascript">
-jQuery(function(){
-  jQuery('#emoji_palette_article_title').emojiPalette(jQuery('#article_title'));
-  jQuery('#emoji_button_article_title').emojiToggle(jQuery('#emoji_palette_article_title'));
-});
-</script>
 
 <div class="emoji_palette" id="emoji_palette_article_title">
 
@@ -285,6 +279,14 @@ jQuery(function(){
 <textarea cols="40" id="article_title" name="article[title]" rows="20">abc123&amp;#xE63E;&amp;#xE600;</textarea>
 EOT
 ).chomp
+    end
+  end
+
+  it "should show unicode entity for unicode private use area characters" do
+    @article.title = @article.title + [ 0xE63E ].pack("U*")
+    @h.form_for(@article, :url => '') do |f|
+      f.emoji_text_area(:title).split("\n").last.downcase.should ==
+        '<textarea cols="40" id="article_title" name="article[title]" rows="20">abc123&amp;#xe63e;&amp;#xe600;&amp;#xe63e;</textarea>'
     end
   end
 end

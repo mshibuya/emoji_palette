@@ -10,6 +10,9 @@ module EmojiPalette # :nodoc:
 
       palette = @template.render(:partial =>'layouts/emoji_palette/emoji_pallete',
                        :locals => {:target => @object_name + '_' + method.to_s})
+      options.update({
+        :value => ::Jpmobile::Emoticon.utf8_to_unicodecr(@object[method])
+      })
       palette + text_area(method,options)
     end
   end
