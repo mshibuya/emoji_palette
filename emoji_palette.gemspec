@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mitsuhiro Shibuya"]
-  s.date = %q{2011-09-09}
+  s.date = %q{2011-09-20}
   s.description = %q{PC emoji translation support for jpmobile using TypePad emoji icons}
   s.email = %q{mit.shibuya@gmail.com}
   s.extra_rdoc_files = [
@@ -25,6 +25,8 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "app/assets/javascripts/emoji_palette.js",
+    "app/assets/stylesheets/emoji.css",
     "app/views/layouts/emoji_palette/_emoji_pallete.html.erb",
     "data/emoticon.yaml",
     "emoji_palette.gemspec",
@@ -288,8 +290,6 @@ Gem::Specification.new do |s|
     "public/emoji/yacht.gif",
     "public/emoji/yen.gif",
     "public/emoji/zero.gif",
-    "public/javascripts/emoji_palette.js",
-    "public/stylesheets/emoji.css",
     "spec/emoji_palette/form_builder_spec.rb",
     "spec/emoji_palette/helper_spec.rb",
     "spec/emoji_palette_spec.rb",
