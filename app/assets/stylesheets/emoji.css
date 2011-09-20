@@ -40,9 +40,9 @@
   clear:right;
 }
 
-.ra-block-content .emoji_button,
-.ra-block-content .emoji_palette,
-.ra-block-content .emoji_palette + textarea{
+.rails_admin .emoji_button,
+.rails_admin .emoji_palette,
+.rails_admin .emoji_palette + textarea{
   margin-left:100px;
 }
 

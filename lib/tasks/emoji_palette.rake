@@ -1,7 +1,7 @@
 namespace :emoji_palette do
   desc "Copy assets files"
   task :install do
-    %w(emoji javascripts stylesheets).map do |dir|
+    %w(emoji).map do |dir|
       src  = File.expand_path("../../public/#{dir}", File.dirname(__FILE__))
       dest = Rails.root.join("public/#{dir}")
       Rails::Generators::Base.source_root(src)
