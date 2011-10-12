@@ -8,7 +8,8 @@ module EmojiPalette
   autoload :Helper,      'emoji_palette/helper'
   autoload :FormBuilder, 'emoji_palette/form_builder'
   module RailsAdmin
-    autoload :EmojiText, 'emoji_palette/rails_admin/emoji_text'
+    autoload :EmojiString, 'emoji_palette/rails_admin/emoji_string'
+    autoload :EmojiText,   'emoji_palette/rails_admin/emoji_text'
   end
 end
 
@@ -22,5 +23,6 @@ ActiveSupport.on_load(:action_view) do
 end
 
 if defined?(::RailsAdmin)
+  ::RailsAdmin::Config::Fields::Types.register(:emoji_string, ::EmojiPalette::RailsAdmin::EmojiString)
   ::RailsAdmin::Config::Fields::Types.register(:emoji_text, ::EmojiPalette::RailsAdmin::EmojiText)
 end
