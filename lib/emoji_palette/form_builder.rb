@@ -12,7 +12,7 @@ module EmojiPalette # :nodoc:
                        :locals => {:target => @object_name + '_' + method.to_s})
       options.update({
         :value => ::Jpmobile::Emoticon.utf8_to_unicodecr(@object[method])
-      })
+      }) if @object[method]
       palette + text_field(method,options)
     end
 
@@ -23,7 +23,7 @@ module EmojiPalette # :nodoc:
                        :locals => {:target => @object_name + '_' + method.to_s})
       options.update({
         :value => ::Jpmobile::Emoticon.utf8_to_unicodecr(@object[method])
-      })
+      }) if @object[method]
       palette + text_area(method,options)
     end
   end

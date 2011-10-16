@@ -561,5 +561,13 @@ EOT
         '<textarea cols="40" id="article_title" name="article[title]" rows="20">abc123&amp;#xe63e;&amp;#xe600;&amp;#xe63e;</textarea>'
     end
   end
+
+  it "should work with field with nil value" do
+    @article.title = nil
+    @h.form_for(@article, :url => '') do |f|
+      lambda{ f.emoji_text_field(:title) }.should_not raise_error
+      lambda{ f.emoji_text_area(:title) }.should_not raise_error
+    end
+  end
 end
 
